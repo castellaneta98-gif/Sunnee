@@ -109,10 +109,6 @@ console.log("Prodotto 1 dopo l'ordine:", prodotto1);
 console.log("Prodotto 2 dopo l'ordine:", prodotto2);
 console.log("Prodotto 3 dopo l'ordine:", prodotto3);
 
-cliente1.ordinareProdotto(prodotto1);
-cliente2.ordinareProdotto(prodotto2);
-cliente3.ordinareProdotto(prodotto3);
-
 console.log("Processo di produzione 1:", processo1);
 console.log("Processo di produzione 2:", processo1);
 console.log("Processo di produzione 3:", processo2);
