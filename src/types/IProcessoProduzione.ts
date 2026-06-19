@@ -1,4 +1,4 @@
-import type { IProdotto } from './IProdotto.js';
+import type { IProdotto } from './IProdotto';
 
 export interface IProcessoProduzione {
     nomeDelProcesso: string;
