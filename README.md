@@ -1,104 +1,81 @@
-# Sunnee 
+# Sunnee
 
 ## Descrizione
 
-Il progetto rappresenta un sistema in TypeScript che modella la struttura operativa di un brand di beachwear in materiali riciclati. Il sistema si concentra sulle interazioni tra clienti, prodotti beachwear e processi di produzione sostenibile. Il codice è strutturato utilizzando interfacce e classi che rappresentano i vari componenti del sistema.
+Sunnee è un progetto TypeScript che modella un brand di beachwear sostenibile (prodotti realizzati con materiali riciclati). Il codice dimostra l'uso di interfacce e classi per rappresentare `Cliente`, `Prodotto` e `ProcessoProduzione` e include esempi di utilizzo.
 
-Sunnee è un brand immaginario che si dedica alla produzione di costumi, magliette e cappelli fatti con plastica riciclata, contribuendo a ridurre l'inquinamento ambientale.
+## Prerequisiti
 
+- Node.js (consigliato) o almeno TypeScript installato.
+- Per compilare localmente: `npm` (opzionale) oppure usare `npx tsc`.
 
-## Architettura
+## Compilazione e avvio
 
-### Interfacce Principali
-
-```typescript
-interface IProdotto {
-    tipo: string;
-    ID: number;
-    taglia: string;
-    colore: string;
-    stato: string;
-    assegnaCliente(cliente: ICliente): void;
-}
-
-interface ICliente {
-    nome: string;
-    cognome: string;
-    email: string;
-    metododiPagamento: string;
-    ordinareProdotto(prodotto: IProdotto): void;
-}
-
-interface IProcessoProduzione {
-    nomeDelProcesso: string;
-    descrizione: string;
-    prodottiInProduzione: IProdotto[];
-    aggiungiProdotto(prodotto: IProdotto): void;
-}
-```
-
-### Classi Principali
-
-- `Prodotto`: Articolo con stato e assegnazione
-- `Cliente`: Dati cliente e operazioni di ordine
-- `ProcessoProduzione`: Traccia prodotti in stadi produttivi
-
-## Uso
-
-### Compilazione
+Compilare il progetto (usa `tsconfig.json` presente nella root):
 
 ```bash
-tsc                     # Compila con tsconfig.json
-tsc --ignoreConfig      # Ignora configurazione
+npx tsc
 ```
 
-### Esempio
+Aprire `index.html` nel browser. Su Windows:
+
+```powershell
+start index.html
+```
+
+Su macOS:
+
+```bash
+open index.html
+```
+
+Su Linux:
+
+```bash
+xdg-open index.html
+```
+
+In alternativa, avviare un server statico dalla root del progetto (utile per moduli ES):
+
+```bash
+npx http-server -c-1
+```
+
+## Struttura del progetto
+
+```
+index.html
+tsconfig.json
+assets/
+src/
+  demo.ts
+  main.ts
+  domain/
+    Cliente.ts
+    ProcessoProduzione.ts
+    Prodotto.ts
+  types/
+    ICliente.ts
+    IProcessoProduzione.ts
+    IProdotto.ts
+```
+
+## Esempio rapido
+
+Esempio di utilizzo (estratto dalle classi):
 
 ```typescript
-// Creazione cliente
-const cliente = new Cliente(
-    "Giuseppe", 
-    "Castellaneta", 
-    "email@example.com", 
-    "bonifico"
-);
-
-// Creazione prodotto
-const maglietta = new Prodotto(
-    "Maglietta", 
-    1, 
-    "M", 
-    "Blu", 
-    "In produzione"
-);
-
-// Aggiunta a processo di produzione
-const processo = new ProcessoProduzione(
-    "Stampe su tessuti riciclati",
-    "Stampa ecologica su tessuti sostenibili"
-);
+const cliente = new Cliente('Giuseppe', 'Castellaneta', 'email@example.com', 'bonifico');
+const maglietta = new Prodotto('Maglietta', 1, 'M', 'Blu', 'In produzione');
+const processo = new ProcessoProduzione('Stampe', 'Stampa ecologica su tessuti sostenibili');
 processo.aggiungiProdotto(maglietta);
-
-// Ordine e assegnazione
 cliente.ordinareProdotto(maglietta);
 maglietta.assegnaCliente(cliente);
 ```
 
-
-
-## Struttura Progetto
-
-```
-├── main.ts          # Logica principale
-├── main.js          # Output compilato
-├── index.html       # Interfaccia HTML
-├── tsconfig.json    # Configurazione
-└── assets/          # Risorse
-```
-
 ## Deployment
 
-Deployato su **CodePen** con ES6 modules e logging in console.
+Questo progetto è pensato per essere eseguito localmente o pubblicato come sito statico; può essere adattato a CodePen o a qualsiasi hosting statico.
 
 ## Autore
 
