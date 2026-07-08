@@ -1,0 +1,24 @@
+{
+  "name": "progetto-typescript-di-giuseppe-castellaneta",
+  "version": "1.0.0",
+  "description": "Sunnee è un progetto TypeScript che modella un brand di beachwear sostenibile (prodotti realizzati con materiali riciclati). Il codice dimostra l'uso di interfacce e classi per rappresentare `Cliente`, `Prodotto` e `ProcessoProduzione` e include esempi di utilizzo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/castellaneta98-gif/Sunnee.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/castellaneta98-gif/Sunnee/issues"
+  },
+  "homepage": "https://github.com/castellaneta98-gif/Sunnee#readme",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
