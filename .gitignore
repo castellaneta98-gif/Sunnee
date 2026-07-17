@@ -1,7 +1,7 @@
- Output compilato (mantenere dist/ in Git)
- dist/
- *.js
- *.js.map
+# Output compilato
+dist/
+*.js
+*.js.map
 
 # Node modules (se necessario)
 node_modules/
